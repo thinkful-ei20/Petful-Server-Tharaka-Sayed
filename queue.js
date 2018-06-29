@@ -41,4 +41,14 @@ function peek(q) {
   return q.first.value;
 }
 
-module.exports = { Queue, peek };
+function display(q) {
+  let current = q.first;
+  let temp;
+  while (current) {
+    temp = current;
+    current = current.next;
+    return temp.value;
+  }
+}
+
+module.exports = { Queue, peek, display };

@@ -7,7 +7,10 @@ const morgan = require('morgan');
 const { PORT, CLIENT_ORIGIN } = require('./config');
 // const { dbConnect } = require('./db-mongoose');
 // const {dbConnect} = require('./db-knex');
-const { peek, Queue } = require('./queue');
+const { peek, display, Queue} = require('./queue');
+
+const cats = require('./catQueue');
+const dogs = require('./dogQueue');
 
 
 const app = express();
@@ -24,51 +27,30 @@ app.use(
   })
 );
 
-const catQueue = new Queue();
-const dogQueue = new Queue();
-
-
-catQueue.enqueue(
-  {
-    imageURL:'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg', 
-    imageDescription: 'Orange bengal cat with black stripes lounging on concrete.',
-    name: 'Fluffy',
-    sex: 'Female',
-    age: 2,
-    breed: 'Bengal',
-    story: 'Thrown on the street'
-  }
-);
-
-dogQueue.enqueue({
-  imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
-  imageDescription: 'A smiling golden-brown golden retreiver listening to music.',
-  name: 'Zeus',
-  sex: 'Male',
-  age: 3,
-  breed: 'Golden Retriever',
-  story: 'Owner Passed away'
-});
-
 //Get Cats
 app.get('/api/cat', (req, res) => {
-  res.json(peek(catQueue));
+  console.log('getting cats')
+  res.json(peek(cats));
 });
 
 //Get Dogs
 app.get('/api/dog', (req, res) => {
   // res.json(dogs[0]);
-  res.json(peek(dogQueue));
+  res.json(peek(dogs));
 });
 
 //Delete Cats
 app.delete('/api/cat', (req, res) => {
-  catQueue.dequeue();
+  console.log('cat deleted')
+  cats.dequeue();
+  console.log(peek(cats))
+  res.sendStatus(204);
 })
 
 //Delete Dogs
 app.delete('/api/dog', (req, res) => {
-  dogQueue.dequeue();
+  dogs.dequeue();
+  res.sendStatus(204);
 })
 
 function runServer(port = PORT) {
