@@ -43,43 +43,23 @@ cats.enqueue({
 });
 
 cats.enqueue({
-  imageURL:'http://cdn1-www.cattime.com/assets/uploads/gallery/maine-coon-cats-and-kittens/maine-coon-cats-and-kittens-1.jpg', 
-  imageDescription: 'Black and brown Main coon cat with green eyes.',
-  name: 'Sebastian',
-  sex: 'Male',
+  imageURL:'https://pixfeeds.com/images/cats/1280-648561826-rusian-blue-cat.jpg', 
+  imageDescription: 'Dark grey Russian Blue with orange eyes',
+  name: 'Felicity',
+  sex: 'Female',
   age: 2,
-  breed: 'Main Coon',
-  story: 'Kids got bored of having a cat'
+  breed: 'Russian Blue',
+  story: 'Owners left her in the pound'
 });
 
 cats.enqueue({
-  imageURL:'http://cdn1-www.cattime.com/assets/uploads/gallery/maine-coon-cats-and-kittens/maine-coon-cats-and-kittens-1.jpg', 
-  imageDescription: 'Black and brown Main coon cat with green eyes.',
-  name: 'Sebastian',
+  imageURL:'https://www.petful.com/wp-content/uploads/2016/07/british-shorthair-750x419.jpg', 
+  imageDescription: 'Dark grey British Shorthair with yellow eyes.',
+  name: 'Carl',
   sex: 'Male',
   age: 2,
-  breed: 'Main Coon',
-  story: 'Kids got bored of having a cat'
-});
-
-cats.enqueue({
-  imageURL:'http://cdn1-www.cattime.com/assets/uploads/gallery/maine-coon-cats-and-kittens/maine-coon-cats-and-kittens-1.jpg', 
-  imageDescription: 'Black and brown Main coon cat with green eyes.',
-  name: 'Sebastian',
-  sex: 'Male',
-  age: 2,
-  breed: 'Main Coon',
-  story: 'Kids got bored of having a cat'
-});
-
-cats.enqueue({
-  imageURL:'http://cdn1-www.cattime.com/assets/uploads/gallery/maine-coon-cats-and-kittens/maine-coon-cats-and-kittens-1.jpg', 
-  imageDescription: 'Black and brown Main coon cat with green eyes.',
-  name: 'Sebastian',
-  sex: 'Male',
-  age: 2,
-  breed: 'Main Coon',
-  story: 'Kids got bored of having a cat'
+  breed: 'British Shorthair',
+  story: 'Found in a dumpster'
 });
 
 module.exports = cats;
