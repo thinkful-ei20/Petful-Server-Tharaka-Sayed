@@ -20,13 +20,12 @@
 //   story: 'Owner Passed away'
 // }];
 
-
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 
 const { PORT, CLIENT_ORIGIN } = require('./config');
-const { dbConnect } = require('./db-mongoose');
+// const { dbConnect } = require('./db-mongoose');
 // const {dbConnect} = require('./db-knex');
 const { peek, Queue, _Node, enqueue, dequeue } = require('./queue');
 
@@ -92,7 +91,7 @@ function runServer(port = PORT) {
 }
 
 if (require.main === module) {
-  dbConnect();
+  // dbConnect();
   runServer();
 }
 
